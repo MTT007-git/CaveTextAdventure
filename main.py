@@ -212,11 +212,11 @@ def getoptions(room: str) -> dict[str: str]:
             else:
                 for j in quest[room]["options"][i][1]:
                     options[j] = quest[room]["options"][i][2]
-                toprint.append(f"{quest[room]["options"][i][1][0]}: {quest[room]["options"][i][0]}")
+                toprint.append(f"{quest[room]['options'][i][1][0]}: {quest[room]['options'][i][0]}")
         else:
             for j in quest[room]["options"][i][1]:
                 options[j] = quest[room]["options"][i][2]
-            toprint.append(f"{quest[room]["options"][i][1][0]}: {quest[room]["options"][i][0]}")
+            toprint.append(f"{quest[room]['options'][i][1][0]}: {quest[room]['options'][i][0]}")
     print("\n".join(toprint)+"\n", end="")
     return options
 
@@ -226,3 +226,4 @@ prevroom: str
 nextroom, prevroom = showroom("start", "start")
 while nextroom != "end":
     nextroom, prevroom = showroom(nextroom, prevroom)
+
